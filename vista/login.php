@@ -17,16 +17,16 @@
             <img src="../img/medicine.svg" alt="">
         </div>
         <div class="contenido-login">
-            <form action="">
+            <form action="../controlador/LoginController.php" method = "post">
                 <img src="../img/doctor.png" alt="Doctor">
-                <h2>Farmacia</h2>
+                <h2>FarmaStock</h2>
                 <div class="input-div documento_identidad">
                     <div class="i">
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="div">
                         <h5>Documento de identidad</h5>
-                        <input type="documento" name = "user" class="input">
+                        <input type="text" name = "user" class="input">
                     </div>
                 </div>
                 <div class="input-div pass">
@@ -35,11 +35,11 @@
                     </div>
                     <div class="div">
                         <h5>Contraseña</h5>
-                        <input type="Passsword" name = "pass" class="input">
+                        <input type="password" name = "pass" class="input">
                     </div>
                 </div>
                 <a href="">Create warpiece</a>
-                <input type="sumbit" class = "btn" value="Iniciar sesion">
+                <input type="submit" class = "btn" value="Iniciar Sesion">
             </form>
         </div>
     </div>

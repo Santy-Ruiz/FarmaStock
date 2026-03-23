@@ -4,8 +4,40 @@ session_start();
 $user = $_POST['user'];
 $pass = $_POST['pass'];
 $usuario = new Usuario();
-$usuario -> Loguearse($user, $pass);
-foreach ($usuario -> objetos as $objeto){
-    print_r($objeto);
+
+
+if(!empty($_SESSION['id_tipo_usuario'])){
+    
+    switch($_SESSION['id_tipo_usuario']){
+        case 1:
+            header('location: ../vista/admin_catalogo.php');
+        break;
+        case 2:
+            header('location: ../vista/tecnico_catalogo.php');
+        break;
+    }
 }
+else{
+    $usuario -> Loguearse($user, $pass);
+    if(!empty($usuario -> objetos)){
+        foreach ($usuario -> objetos as $objeto){
+            $_SESSION['usuario'] = $objeto -> id_usuario;
+            $_SESSION['id_tipo_usuario'] = $objeto -> id_tipo_usuario;
+            $_SESSION['nombre'] = $objeto -> nombre;
+        }
+        switch($_SESSION['id_tipo_usuario']){
+            case 1:
+                header('location: ../vista/admin_catalogo.php');
+            break;
+            case 2:
+                header('location: ../vista/tecnico_catalogo.php');
+            break;
+        }
+    }
+    else{
+        header('location:../index.php');
+    }
+}
+
+
 ?>

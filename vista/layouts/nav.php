@@ -75,7 +75,15 @@
             <a href="editar_datos_personales.php" class="nav-link">
               <i class="nav-icon fas fa-user-cog"></i>
               <p>
-                Gallery
+                Editar Datos Personales
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="adm_usuario.php" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Administrar Usuarios
               </p>
             </a>
           </li>

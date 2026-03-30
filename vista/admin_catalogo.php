@@ -8,59 +8,58 @@ if($_SESSION['id_tipo_usuario']==1){
 <?php
     include_once 'layouts/nav.php';
 ?>
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+<div class="content-wrapper">
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Blank Page</h1>
+            <h1>Catálogo de Medicamentos</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Catalogo Principal</li>
+              <li class="breadcrumb-item"><a href="admin_catalogo.php">Home</a></li>
+              <li class="breadcrumb-item active">Catálogo Principal</li>
             </ol>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- Main content -->
+      </div></section>
+
     <section class="content">
 
-<!-- Default box -->
-<div class="card">
-  <div class="card-header">
-    <h3 class="card-title">Title</h3>
+      <div class="card card-success">
+        <div class="card-header">
+          <h3 class="card-title">Buscar Medicamento en Inventario</h3>
 
-    <div class="card-tools">
-      <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-        <i class="fas fa-minus"></i></button>
-      <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-        <i class="fas fa-times"></i></button>
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Minimizar">
+              <i class="fas fa-minus"></i>
+            </button>
+            </div>
+        </div>
+        
+        <div class="card-body">
+            <div class="input-group mb-4">
+              <input type="text" id="buscar-medicamento" class="form-control form-control-lg" placeholder="Escriba el nombre del medicamento para buscar...">
+              <div class="input-group-append">
+                <button class="btn btn-lg btn-default"><i class="fas fa-search"></i></button>
+              </div>
+            </div>
+
+            <div id="medicamentos" class="row d-flex align-items-stretch">
+                </div>
+        </div>
+        <div class="card-footer text-muted text-center">
+          Utilice la barra de búsqueda para filtrar rápidamente por nombre.
+        </div>
+        </div>
+      </section>
     </div>
-  </div>
-  <div class="card-body">
-    Start creating your amazing application!
-  </div>
-  <!-- /.card-body -->
-  <div class="card-footer">
-    Footer
-  </div>
-  <!-- /.card-footer-->
-</div>
-<!-- /.card -->
-
-</section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  
-<?php
+  <?php
 include_once 'layouts/footer.php';
 }
 else{
     header('Location: ../index.php');
 }
 ?>
+
+<script src="../js/catalogo.js"></script>

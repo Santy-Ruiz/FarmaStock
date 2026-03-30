@@ -7,8 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/css/style.css">
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <?php
 session_start();
@@ -20,12 +22,12 @@ session_destroy();
 ?>
 <body>
     <img class="wave" src="img/login1.png" alt="">
-    <div class = "contenedor">
-        <div class = "img" >
+    <div class="contenedor">
+        <div class="img">
             <img src="img/medicine.svg" alt="">
         </div>
         <div class="contenido-login">
-            <form action="controlador/LoginController.php" method = "post">
+            <form action="controlador/LoginController.php" method="post">
                 <img src="img/doctor.png" alt="Doctor">
                 <h2>FarmaStock</h2>
                 <div class="input-div documento_identidad">
@@ -34,7 +36,7 @@ session_destroy();
                     </div>
                     <div class="div">
                         <h5>Documento de identidad</h5>
-                        <input type="text" name = "user" class="input">
+                        <input type="text" name="user" class="input" required>
                     </div>
                 </div>
                 <div class="input-div pass">
@@ -43,18 +45,36 @@ session_destroy();
                     </div>
                     <div class="div">
                         <h5>Contraseña</h5>
-                        <input type="password" name = "pass" class="input">
+                        <input type="password" name="pass" class="input" required>
                     </div>
                 </div>
-                <a href="">Create warpiece</a>
-                <input type="submit" class = "btn" value="Iniciar Sesion">
+                <input type="submit" class="btn" value="Iniciar Sesion">
             </form>
         </div>
     </div>
+
+    <script>
+        // Leemos la URL buscando la variable "error"
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+
+        if (error == '1') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Acceso Denegado',
+                text: 'El documento de identidad o la contraseña son incorrectos.',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Intentar de nuevo'
+            }).then(() => {
+                
+                window.history.replaceState(null, null, window.location.pathname);
+            });
+        }
+    </script>
+
+    <script src="js/login.js"></script>
 </body>
-<script src="js/login.js"></script>
 </html>
 <?php
-
 }
 ?>

@@ -24,7 +24,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index3.html" class="nav-link">Home</a>
+        <a href="../vista/admin_catalogo.php" class="nav-link">Inicio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -79,25 +79,24 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="adm_usuario.php" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Administrar Usuarios
               </p>
             </a>
-          </li>
-
-          <li class="nav-header">EXAMPLES</li>
-          <li class="nav-item">
-            <a href="editar_datos_personales.php" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+          </li>-->
+          <li class="nav-header">Productos</li>
+            <li class="nav-item">
+            <a href="admin_producto.php" class="nav-link">
+              <i class="nav-icon fas fa-lg fa-mortar-pestle"></i>
               <p>
-                Gallery
+                Gestion de productos
               </p>
             </a>
           </li>
-          
+    
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

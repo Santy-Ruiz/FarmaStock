@@ -21,7 +21,14 @@ if($_SESSION['id_tipo_usuario'] == 1 || $_SESSION['id_tipo_usuario'] == 2) {
           </button>
         </div>
         <div class="card-body">
+          <div id="usuarios" class="row d-flex align-items-stretch"></div>
           <form id="form-crear">
+            <div class="alert alert-success text-center" id="add" style="display:none;">
+                <span><i class="fas fa-check m-1"></i>Se agregó correctamente</span>
+            </div>
+            <div class="alert alert-danger text-center" id="noadd" style="display:none;">
+                <span><i class="fas fa-times m-1"></i>El documento de identidad ya existe en otro usuario</span>
+            </div>
             <div class="form-group">
               <label for="nombre">Nombres</label>
               <input type="text" id="nombre" class="form-control" placeholder="Ingrese nombre" required>
@@ -45,7 +52,7 @@ if($_SESSION['id_tipo_usuario'] == 1 || $_SESSION['id_tipo_usuario'] == 2) {
         </div>
         <div class="card-footer">
           <button type="submit" class="btn bg-gradient-primary float-right m-1">Guardar</button>
-          <button type="button" data-dismiss="modal" class="btn btn-outline-secondary float-right m-1">Close</button>
+          <button type="button" data-dismiss="modal" class="btn btn-outline-secondary float-right m-1">Cerrar</button>
           </form>
         </div>
       </div>
@@ -91,9 +98,10 @@ if($_SESSION['id_tipo_usuario'] == 1 || $_SESSION['id_tipo_usuario'] == 2) {
       </div>
     </section>
     </div>
-  <?php
+<?php
     include_once 'layouts/footer.php';
 } else {
     header('Location: ../index.php');
 }
 ?>
+<script src = "../js/Gestion_usuario.js"></script>
